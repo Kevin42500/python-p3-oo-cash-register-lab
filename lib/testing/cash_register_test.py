@@ -34,14 +34,14 @@ class TestCashRegister:
         '''accepts a title and a price and increases the total.'''
         self.cash_register.add_item("eggs", 0.98)
         assert(self.cash_register.total == 0.98)
-        # self.reset_total(self.cash_register)
+       
         self.reset_register_totals()
 
     def test_add_item_optional_quantity(self):
         '''also accepts an optional quantity.'''
         self.cash_register.add_item("book", 5.00, 3)
         assert(self.cash_register.total == 15.00)
-        # self.cash_register.total = 0
+       
         self.reset_register_totals()
 
     def test_add_item_with_multiple_items(self):
@@ -58,15 +58,15 @@ def test_apply_discount():
     register = CashRegister()
     register.add_item(100)
     register.add_item(50)
-    register.discount = 10  # Set the discount to 10%
+    register.discount = 10  
     discount_message = register.apply_discount()
-    assert discount_message == "Discount applied: 10% off. New total: $135"  # Adjust the expected message and total
+    assert discount_message == "Discount applied: 10% off. New total: $135"  
 
-    register.discount = 20  # Set the discount to 20%
+    register.discount = 20  
     discount_message = register.apply_discount()
-    assert discount_message == "Discount applied: 20% off. New total: $120"  # Adjust the expected message and total
+    assert discount_message == "Discount applied: 20% off. New total: $120"  
 
-    # Add more test cases as needed
+
 
 
     def test_apply_discount_success_message(self):
